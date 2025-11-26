@@ -1,0 +1,135 @@
+'use client'
+import { ArrowUpRight, icons } from 'lucide-react'
+import Image from 'next/image'
+import React from 'react'
+import { motion } from 'motion/react'
+import Link from 'next/link'
+import SectionHeading from '../sectionHeading/page'
+
+const Socials = () => {
+    const cardVariants = {
+        hidden: { opacity: 0, y: 100, filter: "blur(10px)" },
+        visible: {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            transition: {
+                duration: 0.3,
+                ease: "easeOut",
+            }
+        },
+        hover: {
+            y: -4,
+            scale: 1.02,
+            transition: {
+                duration: 0.2,
+                ease: "easeInOut"
+            }
+        }
+    }
+
+    const arrowVariants = {
+        initial: { scale:0, y: 0, rotate: 0 },
+        hover: {
+            rotate: 360,
+            scale: 1.2,
+            y: -17,
+            transition: { duration: 0.4, ease: "easeInOut" }
+        }
+    }
+
+    const socials = [
+        {
+            name: "Instagram",
+            url: "https://www.instagram.com/aryan_chheda7",
+            username: "aryan_chheda7",
+            icon: "/logos/instagram.png"
+        },
+        {
+            name: "X (Twitter)",
+            url: "https://x.com/iamaryan",
+            username: "@iamaryan",
+            icon: "/logos/twitter.png"
+        },
+        {
+            name: "LinkedIn",
+            url: "https://in.linkedin.com/in/aryan-chheda-19ab54363",
+            username: "Aryan Chheda",
+            icon: "/logos/linkedin.png"
+        },
+        {
+            name: "GitHub",
+            url: "https://github.com/Aryan18-dotcom",
+            username: "Aryan18-dotcom",
+            icon: "/logos/github.png"
+        },
+        {
+            name: "Email",
+            url: "mailto:aryanchheda18@gmail.com",
+            username: "AryanChheda18@gmail.com",
+            icon: "/logos/gmail.png"
+        },
+        {
+            name: "Pintrest",
+            url: "https://in.pinterest.com/aryanchheda18",
+            username: "aryanchheda18",
+            icon: "/logos/gsap.png"
+        }
+    ]
+
+    return (
+        <div className='container-coll mt-16'>
+        <SectionHeading sectionTitle="Socials" />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {socials.map((item, index) => (
+                <motion.div
+                    key={index}
+                    custom={index}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={cardVariants}
+                    className="relative"
+                    whileHover="hover"
+                >
+
+                    <Link
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener"
+                        className="relative group/link flex items-center gap-4 p-4 pr-2 cursor-pointer transition-colors select-none
+                            hover:bg-neutral-300 dark:hover:bg-neutral-700 
+                            rounded-l-2xl rounded-b-2xl dark:bg-neutral-700/30 bg-neutral-200 backdrop-blur-md"
+                    >
+                        <div className="relative size-12 shrink-0 rounded-xl">
+                            <Image
+                                src={item.icon}
+                                alt={item.name}
+                                width="48"
+                                height="48"
+                                className="size-full rounded-xl"
+                            />
+                        </div>
+
+                        <div className="flex-1">
+                            <h3 className="font-medium text-neutral-800 dark:text-neutral-200 underline-offset-4 group-hover/link:underline">
+                                {item.name}
+                            </h3>
+                            <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                                {item.username}
+                            </p>
+                        </div>
+
+                        <motion.div variants={arrowVariants}>
+                            <ArrowUpRight size="24" className="text-neutral-500 dark:text-neutral-400" />
+                        </motion.div>
+                    </Link>
+                </motion.div>
+            ))}
+
+        </div>
+        </div>
+    )
+}
+
+export default Socials
