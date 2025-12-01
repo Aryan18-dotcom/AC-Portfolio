@@ -8,7 +8,7 @@ import ShadowBox from '@/components/NavBar/ShadowBox'
 const Links = [
     { href: "/works", title: "Work" },
     { href: "/projects", title: "Projects" },
-    { href: "/blog", title: "Blog" },
+    { href: "/blogs", title: "Blog" },
 ]
 
 const SCROLL_THRESHOLD_REM = 4; // Define the scroll distance threshold
