@@ -6,46 +6,24 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MoveRight, Pin } from "lucide-react";
+import BLOGS from "@/data/blogs";
 
+const HomeBlogs = () => {
+  const [loading, setLoading] = useState(true);
 
-const blogs = [
-  {
-    id: 1,
-    title: "Mastering GSAP Scroll Animations in Modern UI",
-    image: "/WebPhoto/p1.png",
-    date: "14.08.2025",
-    link: "/",
-    isPinned: true,
-  },
-  {
-    id: 2,
-    title: "How I Designed a Fully Animated Portfolio in Next.js",
-    image: "/WebPhoto/p3.png",
-    date: "02.08.2025",
-    link: "/",
-    isPinned: true,
-  },
-  {
-    id: 3,
-    title: "Understanding Tailwind CSS at a Pro Level",
-    image: "/WebPhoto/p5.png",
-    date: "28.07.2025",
-    link: "/",
-    isPinned: true,
-  },
-  {
-    id: 4,
-    title: "Building Scalable Backend Systems with Django",
-    image: "/WebPhoto/p7.png",
-    date: "19.07.2025",
-    link: "/",
-    isPinned: false,
-  },
-];
+  // --- Filtering logic ---
+  const pinned = BLOGS.filter((b) => b.isPinned);
+  const unpinned = BLOGS.filter((b) => !b.isPinned);
 
+  // Take first 4 → pinned first, then fill with unpinned
+  const blogs = [...pinned, ...unpinned].slice(0, 4);
 
-const BlogSkeleton = () => {
-  return (
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const BlogSkeleton = () => (
     <div className="flex flex-col gap-2 p-2 bg-neutral-200 rounded-2xl animate-pulse">
       <div className="w-full h-40 bg-neutral-300 rounded-xl" />
       <div className="flex flex-col gap-2 p-2">
@@ -54,27 +32,20 @@ const BlogSkeleton = () => {
       </div>
     </div>
   );
-};
-
-const HomeBlogs = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Fake loading delay (remove when using real API)
-    const timer = setTimeout(() => setLoading(false), 600);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <Container className="flex h-fit flex-col mb-16">
       <SectionHeading sectionHeader="Featured" sectionTitle="Blogs" />
 
-      <div className="grid grid-cols-2 py-6 px-2 gap-4">
-        {/* If Loading → Show Skeletons */}
-        {loading &&
-          [...Array(3)].map((_, i) => <BlogSkeleton key={i} />)}
+      {/* --- RESPONSIVE GRID CHANGE: grid-cols-1 on small, md:grid-cols-2 on medium+ --- */}
+      <div className="grid grid-cols-1 md:grid-cols-2 py-6 px-2 gap-4">
 
-        {/* If Loaded → Show Blogs */}
+        {/* Skeleton Loading */}
+        {loading &&
+          // Changed Array(3) to Array(4) to better represent the final blog count
+          [...Array(4)].map((_, i) => <BlogSkeleton key={i} />)} 
+
+        {/* Render Blogs */}
         {!loading &&
           blogs.map((blog, index) => (
             <motion.div
@@ -84,7 +55,7 @@ const HomeBlogs = () => {
               transition={{ delay: index * 0.12, duration: 0.4 }}
             >
               <Link
-                href={blog.link}
+                href={blog.link || "#"}
                 className="relative group flex flex-col gap-2 p-2 bg-neutral-200 dark:bg-neutral-800 rounded-2xl shadow-[inset_0px_-2px_5px_1px_var(--color-neutral-300)] dark:shadow-[inset_0px_-2px_5px_1px_var(--color-neutral-700)] transition hover:scale-[1.02]"
               >
                 {/* PIN ICON */}
@@ -117,14 +88,13 @@ const HomeBlogs = () => {
                   <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-sm text-neutral-600 dark:text-neutral-400">
-                      <time>{blog.date}</time>
+                      <time>{blog.date || "Coming Soon"}</time>
                     </dd>
                   </dl>
                 </div>
               </Link>
             </motion.div>
           ))}
-
       </div>
 
       <Link

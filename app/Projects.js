@@ -45,9 +45,9 @@ const projects = [
     ];
 
     return (
-        <Container className="w-full h-fit flex-col mb-16">
+        <Container className="w-full h-fit flex-col md:mb-16 mb-12">
             <SectionHeading sectionTitle="Projects" />
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-6 mt-5">
+            <div className="grid gap-4 grid-cols-1">
                 {projects.map((project, i) => (
                     <ProjectCard key={i} data={project} index={i} />
                 ))}

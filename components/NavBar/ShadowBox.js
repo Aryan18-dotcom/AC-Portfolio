@@ -63,7 +63,7 @@ const ShadowBox = () => {
       }}
       onClick={handleThemeChange}
       disabled={isClicking}
-      className={`flex items-center justify-center h-10 w-10 rounded-xl border border-white/10
+      className={`flex items-center justify-center h-8 w-8 md:size-10 rounded-lg md:rounded-xl border border-white/10
         cursor-pointer transition-opacity
         ${isClicking ? "opacity-50 cursor-not-allowed" : "opacity-100"}`}
     >

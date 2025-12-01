@@ -78,7 +78,7 @@ const Socials = () => {
     ]
 
     return (
-        <div className='container-coll mt-16'>
+        <div className='container-coll md:mt-16 mt-12'>
         <SectionHeading sectionTitle="Socials" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {socials.map((item, index) => (
@@ -97,7 +97,7 @@ const Socials = () => {
                         href={item.url}
                         target="_blank"
                         rel="noopener"
-                        className="relative group/link flex items-center gap-4 p-4 pr-2 cursor-pointer transition-colors select-none
+                        className="relative group/link flex items-center md:gap-4 md:p-4 md:pr-2 pr-1 p-2 gap-2 cursor-pointer transition-colors select-none
                             hover:bg-neutral-300 dark:hover:bg-neutral-700 
                             rounded-l-2xl rounded-b-2xl dark:bg-neutral-700/30 bg-neutral-200 backdrop-blur-md"
                     >
@@ -107,15 +107,15 @@ const Socials = () => {
                                 alt={item.name}
                                 width="48"
                                 height="48"
-                                className="size-full rounded-xl"
+                                className="md:size-full size-8.5 rounded-xl"
                             />
                         </div>
 
                         <div className="flex-1">
-                            <h3 className="font-medium text-neutral-800 dark:text-neutral-200 underline-offset-4 group-hover/link:underline">
+                            <h3 className="font-medium text-neutral-800 dark:text-neutral-200 underline-offset-4 group-hover/link:underline sm:text-sm">
                                 {item.name}
                             </h3>
-                            <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                            <p className="md:text-sm text-neutral-500 dark:text-neutral-400 text-xs">
                                 {item.username}
                             </p>
                         </div>

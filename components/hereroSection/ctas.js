@@ -7,14 +7,14 @@ import Link from 'next/link'
 const CTAs = () => {
     return (
         <div>
-            <div className='mt-8 flex gap-4'>
+            <div className='mt-2 md:mt-8 flex gap-4'>
                 <Link className="hover:cursor-pointer" href="/resume">
                     <motion.div 
                         whileHover={{ scale: 1.02, y: -3, transition:{ duration:0.2, ease:"easeInOut" } }}
                         data-slot="button" 
-                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-50 hover:shadow-[inset_2px_-2px_6px_2px_var(--color-neutral-300)] border-2 border-neutral-300/50 h-9 px-4 py-2 has-[&>svg]:px-3 inset-shadow-indigo-500"
+                        className="inline-flex items-center justify-center gap-2 rounded-md text-xs font-medium bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-50 hover:shadow-[inset_2px_-2px_6px_2px_var(--color-neutral-300)] border-2 border-neutral-300/50 h-8 px-2 has-[&>svg]:px-3 inset-shadow-indigo-500"
                     >
-                        <NotebookText size="22" />
+                        <NotebookText size="18" />
                         Resume / CV
                     </motion.div>
                 </Link>
@@ -23,7 +23,7 @@ const CTAs = () => {
                         initial="initial"
                         whileHover="hover"
                         data-slot="button"
-                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-all bg-neutral-900 dark:bg-neutral-200 text-white dark:text-black hover:bg-neutral-700 dark:hover:bg-neutral-300 h-9 px-4 py-2 has-[&>svg]:px-3 inset-shadow-indigo-500"
+                        className="inline-flex items-center justify-center gap-2 rounded-md text-xs font-medium transition-all bg-neutral-900 dark:bg-neutral-200 text-white dark:text-black hover:bg-neutral-700 dark:hover:bg-neutral-300 h-8 px-2 has-[&>svg]:px-3 inset-shadow-indigo-500"
                     >
                         <motion.div
                             variants={{
@@ -45,7 +45,7 @@ const CTAs = () => {
                                 },
                             }}
                         >
-                            <Send size="20" />
+                            <Send size="16" />
                         </motion.div>
 
                         Get in touch

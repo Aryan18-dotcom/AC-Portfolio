@@ -1,32 +1,33 @@
 import Container from "@/components/helpingCompo/container";
+import Image from "next/image";
 import React from "react";
 
 const BookFreeCall = () => {
   return (
     <Container className="h-fit my-16 px-6">
       <div className="py-12 border-2 border-dashed dark:border-neutral-600 border-neutral-400 rounded-2xl flex justify-between items-center w-full flex-col">
-        <p className="dark:opacity-50 opacity-70 text-xl mb-3 text-center">
+        <p className="dark:opacity-50 opacity-70 md:text-xl text-sm mb-3 text-center">
           Hey, you scrolled this far, let's talk.
         </p>
 
-        <div className="w-full sm:w-auto mt-4 sm:mt-0 flex justify-center sm:justify-end">
+        <div className="w-full sm:w-auto md:mt-4 sm:mt-0 flex justify-center sm:justify-end">
           <div className="inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md shadow-[0_0_5px_rgba(0,0,0,0.1)] dark:shadow-[0_0_5px_rgba(255,255,255,0.1)] self-end text-black dark:text-white cursor-pointer transition-all group">
 
             <div className="flex items-center gap-2 group-hover:gap-8 transition-all duration-300 relative z-20">
 
               <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
-                <img
+                <Image
                   alt="Profile"
                   loading="lazy"
-                  width="20"
-                  height="20"
+                  width="1200"
+                  height="1200"
                   decoding="async"
                   className="w-full h-full object-cover"
-                  src="/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75"
+                  src="/Cartoone_Pic.png"
                 />
               </div>
 
-              <div className="flex items-center gap-0 absolute left-[24px] transform -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="flex items-center gap-0 md:absolute md:left-[24px] md:transform md:-translate-x-full md:opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -47,7 +48,7 @@ const BookFreeCall = () => {
                 </div>
               </div>
 
-              <span className="whitespace-nowrap relative block text-sm font-bold ml-0 group-hover:ml-4 transition-all duration-300 dark:text-neutral-300 text-neutral-700">
+              <span className="whitespace-nowrap relative block md:text-sm text-xs font-bold ml-0 group-hover:ml-4 transition-all duration-300 dark:text-neutral-300 text-neutral-700">
                 Book a Free Call
               </span>
 

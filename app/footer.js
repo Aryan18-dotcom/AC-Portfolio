@@ -59,7 +59,7 @@ const Footer = () => {
                     <div className='flex flex-col items-center justify-center w-full divide-y divide-neutral-700 gap-4'>
                         {/* Credits */}
                         <div className="text-center border-x border-dashed border-black/20 dark:border-white/20 w-full pb-3">
-                            <p className="font-mono text-sm text-muted-foreground mb-1">
+                            <p className="font-mono md:text-sm text-[8px] text-muted-foreground mb-1">
                                 Design inspired by{" "}
                                 <Link href="https://chanhdai.com" className="hover:underline underline-offset-4">
                                     chanhdai.com
@@ -71,7 +71,7 @@ const Footer = () => {
                             </p>
 
                             <div>
-                                <p className="font-mono text-sm text-muted-foreground">
+                                <p className="font-mono md:text-sm text-[8px] text-muted-foreground">
                                     Built by{" "}
                                     <Link href="/" className="hover:underline underline-offset-4 font-semibold">
                                         Aryan Chheda
@@ -83,7 +83,7 @@ const Footer = () => {
                                     .
                                 </p>
                                 {/* © 2025. All rights reserved. */}
-                                <p className="font-mono text-xs text-muted-foreground mt-2 opacity-70">
+                                <p className="font-mono md:text-xs text-[6px] text-muted-foreground mt-2 opacity-70">
                                     © <button type="button" className="underline underline-offset-4">2025</button>. All rights reserved.
                                 </p>
                             </div>
@@ -93,7 +93,7 @@ const Footer = () => {
                         <div className="flex justify-center gap-6 border-x border-dashed border-black/20 dark:border-white/20 w-full">
                             {/* Home */}
                             <Link href="/" className="transition-opacity hover:opacity-100 opacity-70">
-                                <HomeIcon size={20} />
+                                <HomeIcon className='md:size-6 size-4' />
                             </Link>
 
                             {/* Middle divider line */}
@@ -101,7 +101,7 @@ const Footer = () => {
 
                             {/* GitHub */}
                             <Link href="/" className="transition-opacity hover:opacity-100 opacity-70">
-                                <GithubIcon size={20} />
+                                <GithubIcon className='md:size-6 size-4' />
                             </Link>
 
                             {/* Divider */}
@@ -109,7 +109,7 @@ const Footer = () => {
 
                             {/* TV Icon */}
                             <Link href="/" className="transition-opacity hover:opacity-100 opacity-70">
-                                <TvIcon size={20} />
+                                <TvIcon className='md:size-6 size-4' />
                             </Link>
                         </div>
                     </div>

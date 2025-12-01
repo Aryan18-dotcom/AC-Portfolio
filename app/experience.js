@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Experience = () => {
   return (
-    <Container className="min-h-screen flex-col gap-4 mb-16">
+    <Container className="min-h-screen flex-col gap-4 md:mb-16 mb-12">
       <SectionHeading sectionTitle="Experiences" />
 
       <ExperienceItem

@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion' // Swapped 'motion/react' for 'framer-motion' for standard usage
 
 const stackItems = [
   { name: "Next.js", srcLight: "/Logos/nextjs2-dark.svg", srcDark: "/Logos/nextjs2-light.svg", href: "https://nextjs.org/" },
@@ -39,13 +39,19 @@ const AboutMe = () => {
   const { theme } = useTheme();
 
   return (
-    <Container className='flex h-fit flex-col mb-16'>
+    <Container className='flex h-fit flex-col md:mb-16 mb-12'>
       <SectionHeading sectionHeader='About' sectionTitle='Me' />
 
-      <div className='size-full grid grid-cols-2 gap-4 rounded-xl px-2 bg-neutral-100 dark:bg-neutral-900 shadow-[0_4px_18px_rgba(0,0,0,0.08)]'>
-        <div className='col-span-2 grid grid-cols-3 gap-4'>
+      {/* --- MAIN GRID CONTAINER --- */}
+      <div className='size-full grid md:grid-cols-2 grid-cols-1 gap-4 rounded-xl px-2 bg-neutral-100 dark:bg-neutral-900 shadow-[0_4px_18px_rgba(0,0,0,0.08)]'>
+        
+        {/* --- TOP SECTION GRID (Image + Intro + What I Do + Tech I Love) --- */}
+        {/* Changed col-span-2 to col-span-full for small screens and added md:grid-cols-3 */}
+        <div className='col-span-full grid md:grid-cols-3 grid-cols-1 gap-4'> 
+          
           {/* Image */}
-          <div className='row-span-3 rounded-2xl p-1 overflow-hidden bg-neutral-200/60 dark:bg-neutral-800/60 border border-neutral-400/30 dark:border-neutral-800 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
+          {/* Added col-span-full for small screens to ensure full width, kept md:row-span-3 for bento */}
+          <div className='col-span-full md:col-span-1 md:row-span-3 row-span-2 rounded-2xl p-1 overflow-hidden bg-neutral-200/60 dark:bg-neutral-800/60 border border-neutral-400/30 dark:border-neutral-800 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
           dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
             <Image
               src='/prof-pic.jpg'
@@ -57,7 +63,8 @@ const AboutMe = () => {
           </div>
 
           {/* Main Intro */}
-          <motion.div whileHover="animate" initial="initial" className='col-span-2 row-span-3 bg-neutral-200/60 dark:bg-neutral-800/60 p-6 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
+          {/* Added col-span-full for small screens, kept md:col-span-2 for bento structure */}
+          <motion.div whileHover="animate" initial="initial" className='col-span-full md:col-span-2 row-span-3 bg-neutral-200/60 dark:bg-neutral-800/60 p-6 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
           dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
             <h3 className='text-3xl font-bold text-neutral-700 dark:text-neutral-300 tracking-tight'>Aryan Chheda</h3>
             <p className='mt-4 text-neutral-500 dark:text-neutral-400 leading-relaxed text-sm'>
@@ -78,7 +85,8 @@ const AboutMe = () => {
           </motion.div>
 
           {/* What I Do */}
-          <div className='col-span-2 bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
+          {/* Adjusted to col-span-full on small and md:col-span-2 on medium */}
+          <div className='col-span-full md:col-span-2 bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
           dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
             <h3 className='text-xl font-semibold text-neutral-700 dark:text-neutral-300'>What I Do</h3>
             <p className='text-neutral-500 dark:text-neutral-400 text-sm mt-2 leading-5'>
@@ -87,7 +95,8 @@ const AboutMe = () => {
           </div>
 
           {/* Tech I Love */}
-          <div className='bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
+          {/* Adjusted to col-span-full on small and md:col-span-1 on medium */}
+          <div className='col-span-full md:col-span-1 bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
           dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
             <h3 className='text-xl font-semibold text-neutral-700 dark:text-neutral-300'>
               Tech I Love
@@ -116,78 +125,76 @@ const AboutMe = () => {
               })}
             </div>
           </div>
+        </div>
 
-          <div className='col-span-3 grid grid-cols-4 gap-2'>
+        {/* --- BOTTOM SECTION GRID (Contact + Social) --- */}
+        {/* Adjusted to col-span-full on small screens, kept grid-cols-4 and split into col-span-2 for md: */}
+        <div className='col-span-full grid md:grid-cols-2 grid-cols-1 gap-4'> 
 
-            {/* CONTACT DETAILS */}
-            <div className='col-span-2 flex flex-col gap-4 bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
+          {/* CONTACT DETAILS */}
+          {/* Changed col-span-2 to col-span-full on small, md:col-span-1 for md: to sit next to Social */}
+          <div className='col-span-full md:col-span-1 flex flex-col gap-4 bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
           dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
-              <h4 className='text-lg font-semibold text-neutral-700 dark:text-neutral-300'>
-                Contact Details
-              </h4>
+            <h4 className='text-lg font-semibold text-neutral-700 dark:text-neutral-300'>
+              Contact Details
+            </h4>
 
-              <div className='flex flex-col gap-3 mt-2 text-neutral-500 dark:text-neutral-400 text-sm'>
-                {/* Email */}
-                <div className='flex items-center gap-2'>
-                  <MailIcon className='text-neutral-500 size-4' />
-                  <span>aryan.chheda03@gmail.com</span>
-                </div>
+            <div className='flex flex-col gap-3 mt-2 text-neutral-500 dark:text-neutral-400 text-sm'>
+              {/* Email */}
+              <div className='flex items-center gap-2'>
+                <MailIcon className='text-neutral-500 size-4' />
+                <span>aryan.chheda03@gmail.com</span>
+              </div>
 
-                {/* Phone */}
-                <div className='flex items-center gap-2'>
-                  <PhoneCallIcon className='text-neutral-500 size-4' />
-                  <span>+91 98765 43210</span>
-                </div>
+              {/* Phone */}
+              <div className='flex items-center gap-2'>
+                <PhoneCallIcon className='text-neutral-500 size-4' />
+                <span>+91 98765 43210</span>
+              </div>
 
-                {/* Location */}
-                <div className='flex items-center gap-2'>
-                  <LocateIcon className='text-neutral-500 size-4' />
-                  <span>Ahmedabad, Gujarat, India</span>
-                </div>
+              {/* Location */}
+              <div className='flex items-center gap-2'>
+                <LocateIcon className='text-neutral-500 size-4' />
+                <span>Ahmedabad, Gujarat, India</span>
               </div>
             </div>
-
-
-            {/* SOCIAL LINKS */}
-            <div className='col-span-2 flex flex-col gap-4 bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
-          dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
-              <h4 className='text-lg font-semibold text-neutral-700 dark:text-neutral-300'>
-                Social Presence
-              </h4>
-
-              <div className='flex flex-col gap-3 text-neutral-500 dark:text-neutral-400 text-sm'>
-                {/* GitHub */}
-                <a href="https://github.com/Aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
-                  <GithubIcon className='text-neutral-500 size-4' />
-                  <span>github.com/Aryan</span>
-                </a>
-
-                {/* LinkedIn */}
-                <a href="https://linkedin.com/in/aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
-                  <LinkedinIcon className='text-neutral-500 size-4' />
-                  <span>linkedin.com/in/aryan</span>
-                </a>
-
-                {/* Instagram */}
-                <a href="https://instagram.com/_aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
-                  <InstagramIcon className='text-neutral-500 size-4' />
-                  <span>@_aryan</span>
-                </a>
-
-                {/* Portfolio */}
-                <a href="https://aryan.dev" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
-                  <BrainCircuitIcon className='text-neutral-500 size-4' />
-                  <span>aryan.dev</span>
-                </a>
-              </div>
-            </div>
-
           </div>
 
-          {/* <div className='mt-4 p-3 bg-neutral-300 dark:bg-neutral-700 rounded-lg text-center shadow-md'>
-              <Sparkles className='size-5 text-blue-500 dark:text-yellow-300 inline-block mr-1 animate-pulse-slow' />
-              <span className='text-sm font-semibold text-gray-700 dark:text-gray-300'>Let's connect and build something beautiful together.</span>
-            </div> */}
+
+          {/* SOCIAL LINKS */}
+          {/* Changed col-span-2 to col-span-full on small, md:col-span-1 for md: to sit next to Contact */}
+          <div className='col-span-full md:col-span-1 flex flex-col gap-4 bg-neutral-200/60 dark:bg-neutral-800/60 p-5 rounded-xl border border-neutral-400/30 dark:border-neutral-700 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
+          dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
+            <h4 className='text-lg font-semibold text-neutral-700 dark:text-neutral-300'>
+              Social Presence
+            </h4>
+
+            <div className='flex flex-col gap-3 text-neutral-500 dark:text-neutral-400 text-sm'>
+              {/* GitHub */}
+              <a href="https://github.com/Aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+                <GithubIcon className='text-neutral-500 size-4' />
+                <span>github.com/Aryan</span>
+              </a>
+
+              {/* LinkedIn */}
+              <a href="https://linkedin.com/in/aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+                <LinkedinIcon className='text-neutral-500 size-4' />
+                <span>linkedin.com/in/aryan</span>
+              </a>
+
+              {/* Instagram */}
+              <a href="https://instagram.com/_aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+                <InstagramIcon className='text-neutral-500 size-4' />
+                <span>@_aryan</span>
+              </a>
+
+              {/* Portfolio */}
+              <a href="https://aryan.dev" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+                <BrainCircuitIcon className='text-neutral-500 size-4' />
+                <span>aryan.dev</span>
+              </a>
+            </div>
+          </div>
 
         </div>
       </div>

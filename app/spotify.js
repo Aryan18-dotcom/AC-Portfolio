@@ -264,7 +264,7 @@ export default function SpotifyPlayer() {
   const percent = Math.max(0, Math.min(100, (progress || 0) * 100));
 
   return (
-    <Container className="flex-col gap-4 mb-16">
+    <Container className="flex-col gap-4 md:mb-16 mb-12">
       <SectionHeading sectionHeader=" " sectionTitle="When I'm Not Coding!" />
       <motion.div
         whileHover={{ y: -5, scale: 1.01 }}

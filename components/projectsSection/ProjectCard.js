@@ -26,7 +26,7 @@ export default function ProjectCard({ data, index }) {
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.3, ease: "easeInOut", delay: index * 0.1 > 0.3 ? 0.2 : index * 0.1 }}
-      className={`${spanClass}`}
+      className={`md:${spanClass}`}
     >
       <motion.div
         whileHover={{

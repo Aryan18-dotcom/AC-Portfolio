@@ -66,7 +66,7 @@ const Stack = () => {
     
 
     return (
-        <div className="container-coll mb-16 w-full">
+        <div className="container-coll md:mb-16 mb-12 w-full">
             <SectionHeading sectionTitle="Stack" />
 
             <div className="px-6 py-8 [--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center bg-zinc-950/0.75 dark:bg-white/0.75 rounded-tr-2xl rounded-bl-2xl dark:shadow-[inset_-3px_-2px_4px_2px_var(--color-neutral-700)] shadow-[inset_-3px_-2px_4px_2px_var(--color-neutral-200)]">
@@ -83,7 +83,7 @@ const Stack = () => {
                         return (
                             <li key={index} className="flex items-center">
                                 <Tooltip text={item.name} src={item.href}>
-                                    <Image key={item.name} src={imageSrc} alt={item.name} width={36} height={36} className="cursor-pointer rounded-md" />
+                                    <Image key={item.name} src={imageSrc} alt={item.name} width={36} height={36} className="md:h-10 md:w-10 h-6 w-6 cursor-pointer rounded-md" />
                                 </Tooltip>
                             </li>
                         );

@@ -15,7 +15,7 @@ import Loader from './loader'
 
 const page = () => {
   return (
-    <Container className='min-h-screen max-w-3xl mx-auto flex-col'>
+    <Container className='min-h-screen md:max-w-3xl mx-auto flex-col md:px-0 px-4'>
       <Loader />
       <NavBar />
       <HeroSection />

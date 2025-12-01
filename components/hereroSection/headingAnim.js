@@ -60,7 +60,7 @@ const HeadingAnimation = () => {
                         key={index}
                         variants={item}
                         className={`inline-block ${index >= 3 ? "text-secondary" : ""
-                            } text-4xl font-bold tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-neutral-900 via-neutral-700/90 to-neutral-100 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-500`}
+                            } text-2xl md:text-[35px] font-bold tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-neutral-900 via-neutral-700/90 to-neutral-100 dark:from-neutral-100 dark:via-neutral-300 dark:to-neutral-500`}
                     >
                         {word}&nbsp;
                     </motion.span>
