@@ -102,7 +102,7 @@ const Socials = () => {
                             rounded-l-2xl rounded-b-2xl dark:bg-neutral-700/30 bg-neutral-200 backdrop-blur-md"
                     >
                         <div className="relative size-12 shrink-0 rounded-xl">
-                            <Image
+                            <img
                                 src={item.icon}
                                 alt={item.name}
                                 width="48"
