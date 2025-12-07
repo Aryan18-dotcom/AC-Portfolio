@@ -1,5 +1,6 @@
 import Container from "@/components/helpingCompo/container";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const BookFreeCall = () => {
@@ -13,7 +14,7 @@ const BookFreeCall = () => {
         <div className="w-full sm:w-auto md:mt-4 sm:mt-0 flex justify-center sm:justify-end">
           <div className="inline-flex items-center text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md shadow-[0_0_5px_rgba(0,0,0,0.1)] dark:shadow-[0_0_5px_rgba(255,255,255,0.1)] self-end text-black dark:text-white cursor-pointer transition-all group">
 
-            <div className="flex items-center gap-2 group-hover:gap-8 transition-all duration-300 relative z-20">
+            <Link href={"/contact"} className="flex items-center gap-2 group-hover:gap-8 transition-all duration-300 relative z-20">
 
               <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
                 <Image
@@ -52,7 +53,7 @@ const BookFreeCall = () => {
                 Book a Free Call
               </span>
 
-            </div>
+            </Link>
           </div>
         </div>
 

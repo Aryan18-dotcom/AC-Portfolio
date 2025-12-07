@@ -14,6 +14,7 @@ const projects = [
             github: "https://github.com/Aryan18-dotcom/talent-twister", 
             social: "#", // Hidden if '#'
             image: "/Site-Banner/Tallent_Twister.png",
+            project_link: "/projects/tallent-twister"
         },
         {
             title: "Stheic_14 (E-commerce)",
@@ -23,6 +24,7 @@ const projects = [
             github: "https://github.com/Aryan18-dotcom/stheic-14-ecom", 
             social: "https://www.instagram.com/sthetic_14",
             image: "/Site-Banner/Sthetic14.png",
+            project_link: "/projects/sthetic-14-ecomm"
         },
         {
             title: "Todo-App",
@@ -32,6 +34,7 @@ const projects = [
             github: "https://github.com/Aryan18-dotcom/nextjs-todo-app", 
             social: "#",
             image: "https://todo-app-ashy-three.vercel.app/banner.png",
+            project_link: "/projects/todo-app"
         },
         {
             title: "Basic_AI_ResumeBuilder",
@@ -41,6 +44,7 @@ const projects = [
             github: "https://github.com/Aryan18-dotcom/ai-resume-builder", 
             social: "#",
             image: "/Site-Banner/AI_Resume_Builder.png",
+            project_link: "/projects/basic-ai-resume-builder"
         },
     ];
 
