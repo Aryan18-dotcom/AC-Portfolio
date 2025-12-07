@@ -317,7 +317,7 @@ export default function SpotifyPlayer() {
             className="p-2 rounded-md border-[1px]
               dark:border-neutral-800 border-neutral-200
               dark:hover:shadow-[inset_-2px_-2px_4px_1px_var(--color-neutral-800)]
-              hover:shadow-[inset_-2px_-2px_4px_1px_var(--color-neutral-200)]"
+              hover:shadow-[inset_-2px_-2px_4px_1px_var(--color-neutral-200)] cursor-pointer"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             {isLoading ? (
@@ -391,7 +391,7 @@ export default function SpotifyPlayer() {
                 className="absolute"
               >
                 <div
-                  className="border-primary bg-background block w-3 h-3 rounded-full border shadow-sm hover:scale-125 transition-transform"
+                  className="border-primary bg-background block w-3 h-3 rounded-full border shadow-sm hover:scale-125 transition-transform cursor-pointer"
                   aria-hidden="true"
                 />
               </div>

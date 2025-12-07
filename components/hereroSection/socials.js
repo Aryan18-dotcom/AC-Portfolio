@@ -5,6 +5,7 @@ import React from 'react'
 import { motion } from 'motion/react'
 import Link from 'next/link'
 import SectionHeading from '../sectionHeading/page'
+import { localIcons } from '@/utils/data/social-icons'
 
 const Socials = () => {
     const cardVariants = {
@@ -43,37 +44,37 @@ const Socials = () => {
             name: "Instagram",
             url: "https://www.instagram.com/aryan_chheda7",
             username: "aryan_chheda7",
-            icon: "/logos/instagram.png"
+            icon: "instagram"
         },
         {
             name: "X (Twitter)",
             url: "https://x.com/iamaryan",
             username: "@iamaryan",
-            icon: "/logos/twitter.png"
+            icon: "twitter"
         },
         {
             name: "LinkedIn",
             url: "https://in.linkedin.com/in/aryan-chheda-19ab54363",
             username: "Aryan Chheda",
-            icon: "/logos/linkedin.png"
+            icon: "linkedin"
         },
         {
             name: "GitHub",
             url: "https://github.com/Aryan18-dotcom",
             username: "Aryan18-dotcom",
-            icon: "/logos/github.png"
+            icon: "github"
         },
         {
             name: "Email",
             url: "mailto:aryanchheda18@gmail.com",
             username: "AryanChheda18@gmail.com",
-            icon: "/logos/gmail.png"
+            icon: "gmail"
         },
         {
             name: "Pintrest",
             url: "https://in.pinterest.com/aryanchheda18",
             username: "aryanchheda18",
-            icon: "/logos/gsap.png"
+            icon: "pintrest"
         }
     ]
 
@@ -103,7 +104,7 @@ const Socials = () => {
                     >
                         <div className="relative size-12 shrink-0 rounded-xl">
                             <Image
-                                src={item.icon}
+                                src={localIcons[item.icon]}
                                 alt={item.name}
                                 width="48"
                                 height="48"

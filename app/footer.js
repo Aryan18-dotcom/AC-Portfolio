@@ -100,7 +100,7 @@ const Footer = () => {
                             <div className="h-6 w-px bg-black/20 dark:bg-white/20"></div>
 
                             {/* GitHub */}
-                            <Link href="/" className="transition-opacity hover:opacity-100 opacity-70">
+                            <Link href="https://github.com/Aryan18-dotcom" className="transition-opacity hover:opacity-100 opacity-70">
                                 <GithubIcon className='md:size-6 size-4' />
                             </Link>
 
@@ -108,7 +108,7 @@ const Footer = () => {
                             <div className="h-6 w-px bg-black/20 dark:bg-white/20"></div>
 
                             {/* TV Icon */}
-                            <Link href="/" className="transition-opacity hover:opacity-100 opacity-70">
+                            <Link href="/Resume/ARYAN%20CHHEDA_RESUME%202025.pdf" className="transition-opacity hover:opacity-100 opacity-70">
                                 <TvIcon className='md:size-6 size-4' />
                             </Link>
                         </div>

@@ -2,6 +2,7 @@ import DescItem from "@/components/experience/DescItem";
 import ExperienceItem from "@/components/experience/ExperienceItem";
 import Container from "@/components/helpingCompo/container";
 import SectionHeading from "@/components/sectionHeading/page";
+import { localIcons } from "@/utils/data/social-icons";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
@@ -12,7 +13,7 @@ const Experience = () => {
 
       <ExperienceItem
         defaultOpen={true}
-        companyImg="/Company/techmicra.png"
+        companyImg={localIcons["techmicra"]}
         companyName="Good Day :3"
         role="Founding Frontend Engineer"
         start="August 2025"
@@ -56,7 +57,7 @@ const Experience = () => {
       </ExperienceItem>
 
       <ExperienceItem
-        companyImg="/company/google.png"
+        companyImg={localIcons["google"]}
         companyName="Google"
         role="Frontend Developer Intern"
         start="Jan 2024"
@@ -75,7 +76,7 @@ const Experience = () => {
       </ExperienceItem>
 
       <ExperienceItem
-        companyImg="/company/microsoft.png"
+        companyImg={localIcons["microsoft"]}
         companyName="Microsoft"
         role="Software Engineer Intern"
         start="July 2024"
