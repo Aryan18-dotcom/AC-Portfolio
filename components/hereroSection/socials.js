@@ -102,7 +102,6 @@ const Socials = () => {
                             hover:bg-neutral-300 dark:hover:bg-neutral-700 
                             rounded-l-2xl rounded-b-2xl dark:bg-neutral-700/30 bg-neutral-200 backdrop-blur-md"
                     >
-                                // Error Fixed, Lets try to comite and deploy on the versel.
                         <div className="relative size-12 shrink-0 rounded-xl">
                             <Image
                                 src={localIcons[item.icon]}
