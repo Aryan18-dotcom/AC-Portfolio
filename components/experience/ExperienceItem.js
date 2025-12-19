@@ -16,6 +16,9 @@ const ExperienceItem = ({
   children,
   tech,
   defaultOpen = false,
+  website,
+  linkedin,
+  github,
 }) => {
 
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -36,7 +39,7 @@ const ExperienceItem = ({
             width={100}
             height={100}
             src={companyImg}
-            className="size-12 rounded-md"
+            className="size-12 rounded-md object-contain"
           />
 
           <div className="flex flex-col">
@@ -46,9 +49,9 @@ const ExperienceItem = ({
 
               {/* Social Icons */}
               <div className="flex items-center gap-1 ml-2">
-                <SocialLinks title="Website" href="/" icon={<Globe size={16} />} />
-                <SocialLinks title="LinkedIn" href="/" icon={<LinkedinIcon size={16} />} />
-                <SocialLinks title="GitHub" href="/" icon={<GithubIcon size={16} />} />
+                {website && <SocialLinks title="Website" href={website} icon={<Globe size={16} />} />}
+                {linkedin && <SocialLinks title="LinkedIn" href={linkedin} icon={<LinkedinIcon size={16} />} />}
+                {github && <SocialLinks title="GitHub" href={github} icon={<GithubIcon size={16} />} />}
               </div>
 
               {/* Toggle Button */}

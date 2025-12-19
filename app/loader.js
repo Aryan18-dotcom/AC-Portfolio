@@ -7,16 +7,30 @@ const Loader = () => {
 
     // Disable scroll + auto-hide after 2.4s
     useEffect(() => {
-        document.body.style.overflow = "hidden";
-        const timer = setTimeout(() => { 
-            setDone(true) 
-            document.body.style.overflow = "auto"; 
-        }, 4000);
+  // Guard for SSR / hydration
+  if (typeof window === "undefined") return;
 
-        return () => {
-            clearTimeout(timer);
-        };
-    }, []);
+  const hasLoaded = localStorage.getItem("isLoaderLoaded") === "true";
+
+  // If loader already ran, skip immediately
+  if (hasLoaded) {
+    setDone(true);
+    document.body.style.overflow = "auto";
+    return;
+  }
+
+  // Otherwise run loader once
+  document.body.style.overflow = "hidden";
+
+  const timer = setTimeout(() => {
+    localStorage.setItem("isLoaderLoaded", "true");
+    setDone(true);
+    document.body.style.overflow = "auto";
+  }, 4000);
+
+  return () => clearTimeout(timer);
+}, []);
+
 
     return (
         <AnimatePresence>

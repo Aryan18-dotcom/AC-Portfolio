@@ -1,6 +1,5 @@
 import Container from '@/components/helpingCompo/container';
 import NavBar from '../navBar';
-import Loader from '../loader';
 import Link from 'next/link';
 import { Calendar, Clock, Link2, Bell } from 'lucide-react';
 import BLOGS from '@/data/blogs';
@@ -128,7 +127,6 @@ const BlogCard = ({ blog }) => {
 const Blogs = () => {
   return (
     <Container className="min-h-screen max-w-3xl mx-auto flex-col">
-      <Loader />
       <NavBar />
 
       <div className="py-16 space-y-10">
@@ -141,7 +139,38 @@ const Blogs = () => {
           <p className="mx-auto max-w-3xl text-lg text-neutral-600 dark:text-neutral-400">
             Thoughts, stories, experiences, and technical breakdowns from my development journey.
           </p>
-          <div className="w-full h-px bg-neutral-200 dark:bg-neutral-800" />
+
+          {/* Redesigned Under Construction Section */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+
+            <div className="relative px-6 py-4 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl flex flex-col items-center gap-4">
+              {/* Animated Icon */}
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-500 animate-pulse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 20h20" /><path d="m5 10 7 10 7-10Z" /><path d="m9 10 3-7 3 7Z" /><path d="M12 22v-5" /><path d="m17 2 3 3-3 3" />
+                </svg>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+                  Drafting the first entries...
+                </h3>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                  I'm currently building a custom CMS to share my technical deep dives.
+                  Check back soon for insights on Django, React, and UI/UX.
+                </p>
+              </div>
+
+              {/* Badge */}
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+                <span className="w-2 h-2 rounded-full bg-amber-500 mr-2 animate-ping"></span>
+                Work in Progress
+              </span>
+            </div>
+          </div>
+
+          <div className="w-full h-px bg-neutral-200 dark:bg-neutral-800 mt-10" />
         </div>
 
         {/* Grid (same layout as old Projects) */}

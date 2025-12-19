@@ -69,7 +69,7 @@ const NavBar = () => {
                                         className="absolute inset-0 rounded-2xl bg-neutral-700 dark:bg-neutral-300 size-full shadow-[inset_-2px_-2px_4px_1px_var(--color-neutral-500)] dark:shadow-[inset_-2px_-2px_4px_1px_var(--color-neutral-400)] border-1.5 border-neutral-700 dark:border-neutral-300"
                                     ></motion.div>
                                 )}
-                                <span className="relative">{link.title}</span>
+                                <span className="relative px-px">{link.title}</span>
                             </Link>
                         ))}
                     </div>

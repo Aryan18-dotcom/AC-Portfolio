@@ -8,6 +8,8 @@ import pintrest from '../../public/Logos/pinterest.png';
 import google from '../../public/Company/google.png';
 import microsoft from '../../public/Company/microsoft.png';
 import techmicra from '../../public/Company/techmicra.png'
+import payval from "../../public/Company/payval.png"
+import brainybeam from "../../public/Company/brainybeam.png"
 
 export const localIcons = {
     instagram: instagram,
@@ -18,5 +20,7 @@ export const localIcons = {
     pintrest: pintrest,
     techmicra: techmicra,
     google: google,
-    microsoft: microsoft
+    microsoft: microsoft,
+    payval: payval,
+    brainybeam: brainybeam
 };

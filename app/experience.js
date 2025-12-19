@@ -11,94 +11,84 @@ const Experience = () => {
     <Container className="min-h-screen flex-col gap-4 md:mb-16 mb-12">
       <SectionHeading sectionTitle="Experiences" />
 
+      {/* TechMicra Internship */}
       <ExperienceItem
         defaultOpen={true}
         companyImg={localIcons["techmicra"]}
-        companyName="Good Day :3"
-        role="Founding Frontend Engineer"
-        start="August 2025"
+        companyName="TechMicra"
+        role="Full-Stack Developer Intern"
+        start="Jan 2025"
+        end="Apr 2025"
+        location="Ahmedabad, India"
+        website="https://techmicra.co.in/"
+        linkedin="https://www.linkedin.com/company/techmicra/"
+        tech={[
+          { name: "Python", src: "/Logos/python.png" },
+          { name: "Django", src: "/Logos/django.png" },
+          { name: "TailwindCSS", src: "/Logos/tailwind-css.png" },
+          { name: "GitHub", src: "/Logos/github.png" },
+          { name: "Git", src: "/Logos/git.png" },
+        ]}
+      >
+        <DescItem>Served as team leader and senior developer for internal module development.</DescItem>
+        <DescItem>Improved UI responsiveness and ensured aesthetic, interactive, and user-friendly designs[cite: 11].</DescItem>
+        <DescItem>Enhanced database scalability and optimized SQL queries for performance.</DescItem>
+        <DescItem>Contributed to Git/GitHub workflows, code reviews, and team collaboration.</DescItem>
+      </ExperienceItem>
+
+      {/* Payval Technologies Internship */}
+      <ExperienceItem
+        companyImg={localIcons["payval"]}
+        companyName="Payval Technologies"
+        role="Python Developer (Flask) Intern"
+        start="Dec 2025"
         end="Present"
-        location="United States (Remote)"
+        location="Ahmedabad, India"
+        website="https://www.payvaltech.com/"
+        linkedin="https://www.linkedin.com/company/payvaltechnologies"
         tech={[
-          {
-            name: "Next.js",
-            srcLight: "/Logos/nextjs2-light.svg",
-            srcDark: "/Logos/nextjs2-dark.svg",
-          },
-
-          {
-            name: "TailwindCSS",
-            src: "/Logos/tailwind-css.png",
-          },
-
-          {
-            name: "Postman",
-            src: "/Logos/postman.png",
-          },
-
-          {
-            name: "MongoDB",
-            src: "/Logos/mongodb.png",
-          },
-
-          {
-            name: "GithHub",
-            src: "/Logos/github.png",
-          },
+          { name: "Python", src: "/Logos/python.png" },
+          { name: "Flask", src: "/Logos/flask.png" },
+          { name: "Tailwind-Css", src: "/Logos/tailwind-css.png" },
+          { name: "Github", src: "/Logos/github.png" },
+          { name: "Git", src: "/Logos/git.png" },
+          { name: "MongoDB", src: "/Logos/mongodb.png" },
         ]}
-
-
-
       >
-        <DescItem>Architected and developed the frontend infrastructure.</DescItem>
-        <DescItem>Led codebase refactoring for scalability.</DescItem>
-        <DescItem>Integrated and optimized backend APIs with caching.</DescItem>
-        <DescItem>Improved UI consistency and platform performance.</DescItem>
+        <DescItem>Developed a full-stack Expense Split Tracker application using Flask and MongoDB.</DescItem>
+        <DescItem>Architected NoSQL database schemas and implemented seamless MongoDB integration with Flask backends.</DescItem>
+        <DescItem>Built and managed CRUD operations to ensure data integrity for real-time user expenses.</DescItem>
+        <DescItem>Designed responsive frontend interfaces using Tailwind CSS to enhance user experience.</DescItem>
+        <DescItem>Performed data transformation and EDA to provide users with visual spending insights.</DescItem>
       </ExperienceItem>
 
+      {/* BrainyBeam Internship */}
       <ExperienceItem
-        companyImg={localIcons["google"]}
-        companyName="Google"
-        role="Frontend Developer Intern"
-        start="Jan 2024"
-        end="June 2024"
-        location="Bengaluru, India"
+        companyImg={localIcons["brainybeam"]}
+        companyName="BrainyBeam"
+        role="Data Analyst Intern"
+        start="May 2024"
+        end="Aug 2024"
+        location="Ahmedabad, India"
+        website="https://www.brainybeam.com/"
+        linkedin="https://www.linkedin.com/company/brainybeam-technologies-pvt-ltd/"
         tech={[
-          { name: "React", src: "/Logos/react.png" },
-          { name: "JavaScript", src: "/Logos/javascript.png" },
-          { name: "Material UI", src: "/Logos/groq.png" },
+          { name: "Python", src: "/Logos/python.png" },
+          { name: "Pandas", src: "/Logos/pandas-icon.png" },
+          { name: "Jupyter", src: "/Logos/jupyter.png" },
         ]}
       >
-        <DescItem>Built internal dashboards used by 20k+ employees.</DescItem>
-        <DescItem>Developed reusable UI components following Google’s design system.</DescItem>
-        <DescItem>Improved rendering speed by 34% using memoization and lazy loading.</DescItem>
-        <DescItem>Collaborated with senior engineers during weekly code reviews.</DescItem>
-      </ExperienceItem>
-
-      <ExperienceItem
-        companyImg={localIcons["microsoft"]}
-        companyName="Microsoft"
-        role="Software Engineer Intern"
-        start="July 2024"
-        end="Dec 2024"
-        location="Hyderabad, India"
-        tech={[
-          { name: "Azure", srcLight: "/Logos/azure-light.svg", srcDark: "/Logos/azure-dark.svg" },
-          { name: ".NET", srcLight: "/Logos/dotnet-light.svg", srcDark: "/Logos/dotnet-dark.svg" },
-          { name: "C#", srcLight: "/Logos/csharp-light.svg", srcDark: "/Logos/csharp-dark.svg" },
-        ]}
-      >
-        <DescItem>Optimized cloud API performance by reducing payload size 40%.</DescItem>
-        <DescItem>Worked on security-centric backend microservices.</DescItem>
-        <DescItem>Contributed to internal tools used across global engineering teams.</DescItem>
-        <DescItem>Integrated logging + monitoring using Azure Application Insights.</DescItem>
+        <DescItem>Cleaned and transformed datasets using Python & Pandas to ensure data quality.</DescItem>
+        <DescItem>Extracted business insights through detailed EDA processes.</DescItem>
+        <DescItem>Developed a comprehensive business insights dashboard using Jupyter Notebook.</DescItem>
+        <DescItem>Performed database CRUD operations to maintain data flow.</DescItem>
       </ExperienceItem>
 
       <Link
         href={"/works"}
         className="mt-6 py-2 px-4 border-[1px] border-neutral-300 dark:border-neutral-800 rounded-xl text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 hover:shadow-[inset_0px_1px_1px_1px_var(--color-neutral-300)] dark:hover:shadow-[inset_0px_1px_1px_1px_var(--color-neutral-700)] inline-flex items-center gap-2"
       >
-        Explore all the work experiances 
+        Explore all the work experiences 
         <MoveRight className="size-4" />
       </Link>
 

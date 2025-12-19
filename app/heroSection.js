@@ -36,7 +36,7 @@ export const HeroSection = () => {
             rel="noopener"
             className="inline-flex items-center text-xs bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 md:py-1 md:px-2 p-1 rounded-md skill-inner-shadow text-black dark:text-white"
           >
-            <Image src="/Logos/next-js.png" height={16} width={16} alt="Next.js" />
+            <Image src="/Logos/nextjs2-dark.svg" height={16} width={16} alt="Next.js" />
             <p className="ml-1 text-xs font-bold">Next.js</p>
           </a>
 

@@ -20,7 +20,6 @@ const Project = () => {
     const [loading, setLoading] = useState(true);
 
     const projectID = params.projectID;
-    console.log('ProjectID', projectID);
 
 
     useEffect(() => {

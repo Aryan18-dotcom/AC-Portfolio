@@ -164,7 +164,6 @@ const ProjectCard = ({ project }) => {
 const Projects = () => {
   return (
     <Container className='min-h-screen max-w-3xl mx-auto flex-col'>
-      <Loader />
       <NavBar />
       <div className='py-16 space-y-10'>
         {/* Header Section */}
