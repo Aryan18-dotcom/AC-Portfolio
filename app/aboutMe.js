@@ -47,11 +47,11 @@ const AboutMe = () => {
         
         {/* --- TOP SECTION GRID (Image + Intro + What I Do + Tech I Love) --- */}
         {/* Changed col-span-2 to col-span-full for small screens and added md:grid-cols-3 */}
-        <div className='col-span-full grid md:grid-cols-3 grid-cols-1 gap-4'> 
+        <div className='col-span-full grid md:grid-cols-3 grid-cols-4 gap-4'> 
           
           {/* Image */}
           {/* Added col-span-full for small screens to ensure full width, kept md:row-span-3 for bento */}
-          <div className='col-span-full md:col-span-1 md:row-span-3 row-span-2 rounded-2xl p-1 overflow-hidden bg-neutral-200/60 dark:bg-neutral-800/60 border border-neutral-400/30 dark:border-neutral-800 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
+          <div className='col-span-2 md:col-span-1 md:row-span-3 row-span-3 rounded-2xl p-1 overflow-hidden bg-neutral-200/60 dark:bg-neutral-800/60 border border-neutral-400/30 dark:border-neutral-800 shadow-[inset_1px_-2px_5px_1px_var(--color-neutral-300)]
           dark:shadow-[inset_0px_-2px_12px_3px_var(--color-neutral-700)]'>
             <Image
               src='/prof-pic.jpg'
@@ -72,7 +72,7 @@ const AboutMe = () => {
             </p>
             <div className='flex items-center gap-4 mt-4 text-neutral-100 dark:text-neutral-900'>
               <motion.div initial={{ y: 0, scale: 1 }} whileHover={{ y: -2, scale: 1.02 }} transition={{ duration: 0.2, ease: "easeInOut" }}>
-                <Link href="/" className='px-4 py-1 rounded-xl bg-neutral-800 dark:bg-neutral-200 border border-neutral-600/50 shadow-[inset_0px_-2px_6px_1px_rgba(0,0,0,0.3)]'>
+                <Link href="/contact" className='px-4 py-1 rounded-xl bg-neutral-800 dark:bg-neutral-200 border border-neutral-600/50 shadow-[inset_0px_-2px_6px_1px_rgba(0,0,0,0.3)]'>
                   Let's Connect
                 </Link>
               </motion.div>
@@ -142,20 +142,26 @@ const AboutMe = () => {
             <div className='flex flex-col gap-3 mt-2 text-neutral-500 dark:text-neutral-400 text-sm'>
               {/* Email */}
               <div className='flex items-center gap-2'>
-                <MailIcon className='text-neutral-500 size-4' />
-                <span>aryan.chheda03@gmail.com</span>
+                <a href="mailto:aryanchheda22@gmail.com" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+                  <MailIcon className='text-neutral-500 size-4' />
+                  <span>aryanchheda22@gmail.com</span>
+                </a>
               </div>
 
               {/* Phone */}
               <div className='flex items-center gap-2'>
-                <PhoneCallIcon className='text-neutral-500 size-4' />
-                <span>+91 98765 43210</span>
+                <a href="tel:+917021358411" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+                  <PhoneCallIcon className='text-neutral-500 size-4' />
+                  <span>+91 98765 43210</span>
+                </a>
               </div>
 
               {/* Location */}
               <div className='flex items-center gap-2'>
-                <LocateIcon className='text-neutral-500 size-4' />
-                <span>Ahmedabad, Gujarat, India</span>
+                <a href='https://www.google.com/maps/search/?api=1&query=Ahmedabad,Gujarat,India' target='_blank' className='flex items-center gap-2 hover:opacity-80 transition'>
+                  <LocateIcon className='text-neutral-500 size-4' />
+                  <span>Ahmedabad, Gujarat, India</span>
+                </a>
               </div>
             </div>
           </div>
@@ -171,27 +177,27 @@ const AboutMe = () => {
 
             <div className='flex flex-col gap-3 text-neutral-500 dark:text-neutral-400 text-sm'>
               {/* GitHub */}
-              <a href="https://github.com/Aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+              <a href="https://github.com/Aryan18-dotcom" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
                 <GithubIcon className='text-neutral-500 size-4' />
-                <span>github.com/Aryan</span>
+                <span>github.com/Aryan18-dotcom</span>
               </a>
 
               {/* LinkedIn */}
-              <a href="https://linkedin.com/in/aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+              <a href="https://in.linkedin.com/in/aryan-chheda-19ab54363" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
                 <LinkedinIcon className='text-neutral-500 size-4' />
-                <span>linkedin.com/in/aryan</span>
+                <span>linkedin.com/in/aryan-chheda</span>
               </a>
 
               {/* Instagram */}
-              <a href="https://instagram.com/_aryan" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+              <a href="https://www.instagram.com/aryan_chheda7" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
                 <InstagramIcon className='text-neutral-500 size-4' />
-                <span>@_aryan</span>
+                <span>aryan_chheda7</span>
               </a>
 
               {/* Portfolio */}
-              <a href="https://aryan.dev" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
+              <a href="/" target="_blank" className='flex items-center gap-2 hover:opacity-80 transition'>
                 <BrainCircuitIcon className='text-neutral-500 size-4' />
-                <span>aryan.dev</span>
+                <span>ac-portfolio</span>
               </a>
             </div>
           </div>

@@ -43,11 +43,17 @@ const Footer = () => {
                     </div>
 
                     {/* Logotype SVG: ADDING mt-1 (margin-top) to nudge it up */}
-                    <div className="flex items-center justify-center pr-6 sm:pr-8 bg-black/[0.01] dark:bg-white/[0.03] mx-auto">
-                        <svg viewBox="0 0 58 5" xmlns="http://www.w3.org/2000/svg" className="mt-1 mx-auto size-full px-32 dark:text-neutral-300 text-neutral-700">
-                            <path fill="currentColor" d="M2 0h1v1H2zM2 2h1v1H2zM1 1h1v4H1zM3 1h1v4H3zM6 0h2v1H6zM5 1h1v3H5zM6 4h2v1H6zM12 0h1v1h-1zM11 1h1v4h-1zM12 2h1v1h-1zM13 1h1v4h-1zM15 0h3v1h-3zM15 1h1v4h-1zM17 1h1v1h-1zM16 2h1v1h-1zM17 3h1v2h-1zM19 0h1v2h-1zM20 2h1v3h-1zM21 0h1v2h-1zM23 1h1v4h-1zM24 0h1v1h-1zM24 2h1v1h-1zM25 1h1v4h-1zM27 1h1v4h-1zM28 0h1v1h-1zM29 1h1v3h-1zM30 4h1v1h-1zM31 0h1v4h-1zM33 1h1v3h-1zM34 0h2v1h-2zM34 4h2v1h-2zM37 1h1v4h-1zM38 2h2v1h-2zM39 0h1v4h-1zM41 0h1v4h-1zM42 2h2v1h-2zM43 1h1v4h-1zM45 1h1v3h-1zM46 0h2v1h-2zM46 2h1v1h-1zM46 4h2v1h-2zM49 0h1v5h-1zM50 0h2v1h-2zM50 4h2v1h-2zM52 1h1v3h-1zM54 1h1v4h-1zM55 0h1v1h-1zM56 1h1v4h-1zM55 2h1v1h-1z" />
+                    <div className="flex items-center justify-center bg-black/[0.01] dark:bg-white/[0.03] w-full overflow-hidden">
+                        <svg 
+                            viewBox="0 0 58 5" 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className="mt-1 w-full max-w-[600px] px-4 md:px-12 lg:px-8 dark:text-neutral-300 text-neutral-700 h-auto"
+                        >
+                            <path 
+                                fill="currentColor" 
+                                d="M2 0h1v1H2zM2 2h1v1H2zM1 1h1v4H1zM3 1h1v4H3zM6 0h2v1H6zM5 1h1v3H5zM6 4h2v1H6zM12 0h1v1h-1zM11 1h1v4h-1zM12 2h1v1h-1zM13 1h1v4h-1zM15 0h3v1h-3zM15 1h1v4h-1zM17 1h1v1h-1zM16 2h1v1h-1zM17 3h1v2h-1zM19 0h1v2h-1zM20 2h1v3h-1zM21 0h1v2h-1zM23 1h1v4h-1zM24 0h1v1h-1zM24 2h1v1h-1zM25 1h1v4h-1zM27 1h1v4h-1zM28 0h1v1h-1zM29 1h1v3h-1zM30 4h1v1h-1zM31 0h1v4h-1zM33 1h1v3h-1zM34 0h2v1h-2zM34 4h2v1h-2zM37 1h1v4h-1zM38 2h2v1h-2zM39 0h1v4h-1zM41 0h1v4h-1zM42 2h2v1h-2zM43 1h1v4h-1zM45 1h1v3h-1zM46 0h2v1h-2zM46 2h1v1h-1zM46 4h2v1h-2zM49 0h1v5h-1zM50 0h2v1h-2zM50 4h2v1h-2zM52 1h1v3h-1zM54 1h1v4h-1zM55 0h1v1h-1zM56 1h1v4h-1zM55 2h1v1h-1z" 
+                            />
                         </svg>
-
                     </div>
 
                 </div>
@@ -73,13 +79,13 @@ const Footer = () => {
                             <div>
                                 <p className="font-mono md:text-sm text-[8px] text-muted-foreground">
                                     Built by{" "}
-                                    <Link href="/" className="hover:underline underline-offset-4 font-semibold">
+                                    <a href="https://www.instagram.com/aryan_chheda7" target='_blank' className="hover:underline underline-offset-4 font-semibold">
                                         Aryan Chheda
-                                    </Link>
+                                    </a>
                                     . Source code on{" "}
-                                    <Link href="/" className="hover:underline underline-offset-4 font-semibold">
+                                    <a href="https://github.com/Aryan18-dotcom" target='_blank' className="hover:underline underline-offset-4 font-semibold">
                                         GitHub
-                                    </Link>
+                                    </a>
                                     .
                                 </p>
                                 {/* © 2025. All rights reserved. */}
@@ -100,17 +106,17 @@ const Footer = () => {
                             <div className="h-6 w-px bg-black/20 dark:bg-white/20"></div>
 
                             {/* GitHub */}
-                            <Link href="https://github.com/Aryan18-dotcom" className="transition-opacity hover:opacity-100 opacity-70">
+                            <a href="https://github.com/Aryan18-dotcom" target='_blank' className="transition-opacity hover:opacity-100 opacity-70">
                                 <GithubIcon className='md:size-6 size-4' />
-                            </Link>
+                            </a>
 
                             {/* Divider */}
                             <div className="h-6 w-px bg-black/20 dark:bg-white/20"></div>
 
                             {/* TV Icon */}
-                            <Link href="/Resume/ARYAN%20CHHEDA_RESUME%202025.pdf" className="transition-opacity hover:opacity-100 opacity-70">
+                            <a href="/Resume/ARYAN%20CHHEDA_RESUME%202025.pdf" target='_blank' className="transition-opacity hover:opacity-100 opacity-70">
                                 <TvIcon className='md:size-6 size-4' />
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

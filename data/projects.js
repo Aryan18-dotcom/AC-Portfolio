@@ -168,6 +168,200 @@ const PROJECTS = [
   },
 
   {
+    id: "split-with",
+    title: "SplitWith",
+    desc: "A smart expense-sharing application designed to simplify group payments and track shared costs effortlessly.",
+    status: "ready",
+    github: "https://github.com/Aryan18-dotcom/SplitWith",
+    live: "https://splitwith.onrender.com",
+    social: "",
+    image: "/Site-Banner/SplitWith.png",
+    size: "medium",
+    slug: "split-with",
+    tech: ["Next.js", "Tailwind-css", "MongoDB", "Auth.js"],
+
+    fullDescription:
+      "SplitWith is a modern bill-splitting tool that allows users to create groups, add expenses, and calculate exact debts between friends. It features an intuitive dashboard to visualize who owes whom.",
+
+    timeline: {
+      idea: "3 Days",
+      design: "4 Days",
+      build: "12 Days",
+      completed: "15 Feb 2025",
+    },
+
+    techUsed: [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Prisma",
+      "TailwindCSS",
+      "Framer Motion",
+    ],
+
+    totalTime: "19 days",
+
+    flaws: [
+      "No multi-currency support yet",
+      "Settlement notifications are manual",
+    ],
+
+    cons: [
+      "Requires user registration for both parties",
+      "Needs internet for real-time balance updates",
+    ],
+
+    challenges: "Algorithm design for simplifying debts across multiple users to minimize the number of transactions.",
+
+    learnings: "Deepened knowledge in complex arithmetic logic in JavaScript and relational data modeling in NoSQL.",
+
+    overview: "A streamlined group expense manager to eliminate awkward money conversations.",
+    usersCanDo: [
+      "Create expense groups",
+      "Split bills equally or unequally",
+      "Track total balances",
+      "Simplify group debts",
+    ],
+    whyBuilt: "To solve the hassle of managing shared household and travel expenses.",
+    differences: [
+      "Debt simplification algorithm",
+      "Extremely minimal UI",
+      "Fast group creation",
+    ],
+    futurePlans: [
+      "Add OCR for receipt scanning",
+      "Integrate UPI/PayPal for direct settlements",
+      "WhatsApp notification alerts",
+    ],
+  },
+
+  {
+    id: "chain-tech",
+    title: "ChainTech Project",
+    desc: "A high-performance landing page and platform architecture built for a technology-focused blockchain firm.",
+    status: "ready",
+    github: "https://github.com/Aryan18-dotcom/ChainTech-Project",
+    live: "",
+    social: "",
+    image: "/Site-Banner/ChainTech.png",
+    size: "medium-tall",
+    slug: "chain-tech",
+    tech: ["Next.js", "Gsap", "Framer-Motion"],
+
+    fullDescription:
+      "ChainTech is a sophisticated web presence for a blockchain solutions provider. It features advanced scroll-triggered animations and a modern dark-themed aesthetic.",
+
+    timeline: {
+      idea: "2 Days",
+      design: "5 Days",
+      build: "8 Days",
+      completed: "28 Jan 2025",
+    },
+
+    techUsed: ["Next.js", "TailwindCSS", "GSAP", "Framer Motion", "Three.js"],
+
+    totalTime: "15 days",
+
+    flaws: [
+      "High GPU usage due to heavy animations",
+      "Large asset sizes on initial load",
+    ],
+
+    cons: [
+      "Not optimized for low-end mobile devices",
+    ],
+
+    challenges: "Synchronizing complex GSAP timelines with React component lifecycles.",
+
+    learnings: "Mastered high-end UI interactivity and performance optimization for animation-heavy sites.",
+
+    overview: "A premium, tech-forward landing page for the Web3 industry.",
+    usersCanDo: [
+      "Explore interactive service sections",
+      "View animated project case studies",
+      "Connect through high-conversion lead forms",
+    ],
+    whyBuilt: "To showcase high-end front-end engineering capabilities for the fintech sector.",
+    differences: [
+      "Bespoke motion design",
+      "Glassmorphic UI elements",
+      "Ultra-smooth scroll experience",
+    ],
+    futurePlans: [
+      "Add a live crypto-ticker",
+      "Integrate a blog for tech insights",
+      "Implement multi-language support",
+    ],
+  },
+
+  {
+    id: "tms-transport",
+    title: "Transport Management System",
+    desc: "A comprehensive logistics and fleet management platform to track shipments, drivers, and deliveries.",
+    status: "building",
+    github: "https://github.com/Aryan18-dotcom/Transport-Management-System-TMS-",
+    live: "",
+    social: "",
+    image: "/Site-Banner/TMS.png",
+    size: "large",
+    slug: "transport-management-system",
+    tech: ["Django", "PostgreSQL", "Google Maps API", "Redis"],
+
+    fullDescription:
+      "A robust ERP solution for transport companies to manage orders, optimize routes, and monitor vehicle health in real-time.",
+
+    timeline: {
+      idea: "2 Weeks",
+      design: "1 Week",
+      build: "Work in Progress",
+      completed: "—",
+    },
+
+    techUsed: [
+      "Django",
+      "Python",
+      "PostgreSQL",
+      "Redis",
+      "Celery (for task scheduling)",
+      "Google Maps API",
+    ],
+
+    totalTime: "In Progress",
+
+    flaws: [
+      "Route optimization algorithm is computationally expensive",
+      "Map rendering needs further optimization",
+    ],
+
+    cons: [
+      "Complex setup and database configuration",
+    ],
+
+    challenges: "Handling real-time GPS data streams and ensuring data consistency across a large fleet.",
+
+    learnings: "Learning about GIS (Geographic Information Systems) and background task processing.",
+
+    overview: "An all-in-one logistics solution for the modern transport industry.",
+    usersCanDo: [
+      "Assign shipments to drivers",
+      "Track real-time shipment status",
+      "Generate automated invoices",
+      "Monitor fuel and maintenance costs",
+    ],
+    whyBuilt: "To automate the manually intensive tracking processes in the logistics sector.",
+    differences: [
+      "Integrated route optimization",
+      "Driver performance analytics",
+      "Automated fleet alerts",
+    ],
+    futurePlans: [
+      "Mobile app for drivers",
+      "AI-based fuel consumption prediction",
+      "IoT sensor integration for cargo temperature",
+    ],
+  },
+
+  {
     id: "basic-ai-resumebuilder",
     title: "Basic_AI_ResumeBuilder",
     desc: "AI-powered resume generator with strong backend architecture.",

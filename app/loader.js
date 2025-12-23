@@ -1,36 +1,33 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Loader = () => {
-    const [done, setDone] = useState(false);
+    const [done, setDone] = useState(true);
+    const [isClient, setIsClient] = useState(false);
 
-    // Disable scroll + auto-hide after 2.4s
     useEffect(() => {
-  // Guard for SSR / hydration
-  if (typeof window === "undefined") return;
+        setIsClient(true);
+        const hasLoaded = localStorage.getItem("isLoaderLoaded") === "true";
 
-  const hasLoaded = localStorage.getItem("isLoaderLoaded") === "true";
+        if (!hasLoaded) {
+            setDone(false);
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }, []);
 
-  // If loader already ran, skip immediately
-  if (hasLoaded) {
-    setDone(true);
-    document.body.style.overflow = "auto";
-    return;
-  }
+    // 2. Optimized completion handler using useCallback
+    const handleComplete = useCallback(() => {
+        setTimeout(() => {
+            localStorage.setItem("isLoaderLoaded", "true");
+            setDone(true);
+            document.body.style.overflow = "auto";
+        }, 2000);
+    }, []);
 
-  // Otherwise run loader once
-  document.body.style.overflow = "hidden";
-
-  const timer = setTimeout(() => {
-    localStorage.setItem("isLoaderLoaded", "true");
-    setDone(true);
-    document.body.style.overflow = "auto";
-  }, 4000);
-
-  return () => clearTimeout(timer);
-}, []);
-
+    if (!isClient) return null;
 
     return (
         <AnimatePresence>
@@ -171,6 +168,7 @@ const Loader = () => {
                                         fillOpacity: { duration: 1.5, ease: "easeOut", delay: 1.8 },
                                         filter: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                                     }}
+                                    onAnimationComplete={handleComplete}
                                 />
                                 <motion.rect
                                     x="8"

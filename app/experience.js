@@ -23,11 +23,11 @@ const Experience = () => {
         website="https://techmicra.co.in/"
         linkedin="https://www.linkedin.com/company/techmicra/"
         tech={[
-          { name: "Python", src: "/Logos/python.png" },
-          { name: "Django", src: "/Logos/django.png" },
-          { name: "TailwindCSS", src: "/Logos/tailwind-css.png" },
-          { name: "GitHub", src: "/Logos/github.png" },
-          { name: "Git", src: "/Logos/git.png" },
+          { name: "Python", src: "/Logos/python.png", href: "https://www.python.org/" },
+          { name: "Django", src: "/Logos/django.png", href: "https://www.djangoproject.com/" },
+          { name: "TailwindCSS", src: "/Logos/tailwind-css.png", href: "https://tailwindcss.com/" },
+          { name: "GitHub", src: "/Logos/github.png", href: "https://github.com/" },
+          { name: "Git", src: "/Logos/git.png", href: "https://git-scm.com/" },
         ]}
       >
         <DescItem>Served as team leader and senior developer for internal module development.</DescItem>
@@ -47,12 +47,12 @@ const Experience = () => {
         website="https://www.payvaltech.com/"
         linkedin="https://www.linkedin.com/company/payvaltechnologies"
         tech={[
-          { name: "Python", src: "/Logos/python.png" },
-          { name: "Flask", src: "/Logos/flask.png" },
-          { name: "Tailwind-Css", src: "/Logos/tailwind-css.png" },
-          { name: "Github", src: "/Logos/github.png" },
-          { name: "Git", src: "/Logos/git.png" },
-          { name: "MongoDB", src: "/Logos/mongodb.png" },
+          { name: "Python", src: "/Logos/python.png", href: "https://www.python.org/" },
+          { name: "Flask", src: "/Logos/flask.png", href: "https://flask.palletsprojects.com/en/stable/" },
+          { name: "Tailwind-Css", src: "/Logos/tailwind-css.png", href: "https://tailwindcss.com/" },
+          { name: "Github", src: "/Logos/github.png", href: "https://github.com/" },
+          { name: "Git", src: "/Logos/git.png", href: "https://git-scm.com/" },
+          { name: "MongoDB", src: "/Logos/mongodb.png", href: "https://www.mongodb.com/" },
         ]}
       >
         <DescItem>Developed a full-stack Expense Split Tracker application using Flask and MongoDB.</DescItem>
@@ -73,9 +73,9 @@ const Experience = () => {
         website="https://www.brainybeam.com/"
         linkedin="https://www.linkedin.com/company/brainybeam-technologies-pvt-ltd/"
         tech={[
-          { name: "Python", src: "/Logos/python.png" },
-          { name: "Pandas", src: "/Logos/pandas-icon.png" },
-          { name: "Jupyter", src: "/Logos/jupyter.png" },
+          { name: "Python", src: "/Logos/python.png", href: "https://www.python.org/" },
+          { name: "Pandas", src: "/Logos/pandas-icon.png", href: "https://pandas.pydata.org/" },
+          { name: "Jupyter", src: "/Logos/jupyter.png", href: "https://jupyter.org/" },
         ]}
       >
         <DescItem>Cleaned and transformed datasets using Python & Pandas to ensure data quality.</DescItem>
