@@ -3,38 +3,32 @@ import React, { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Loader = () => {
-    // 1. Start with false so it exists in the initial pre-rendered HTML
     const [done, setDone] = useState(false);
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
         setIsClient(true);
         const hasLoaded = localStorage.getItem("isLoaderLoaded") === "true";
+        document.documentElement.style.overflow = "hidden";
 
         if (hasLoaded) {
-            // If already loaded, hide immediately
             setDone(true);
-            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
         } else {
-            // If not loaded, lock scroll (loader is already visible because done is false)
-            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
         }
     }, []);
 
     const handleComplete = useCallback(() => {
-        // Only run completion if we aren't already "done"
-        // This prevents the timeout from firing if the user had already seen the loader
         setTimeout(() => {
             localStorage.setItem("isLoaderLoaded", "true");
             setDone(true);
-            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
         }, 2000);
     }, []);
 
-    // Prevent hydration mismatch: don't render until client-side is confirmed
     if (!isClient) return null;
 
-    // If localstorage says we are done, return null immediately to avoid flicker
     if (done && typeof window !== "undefined" && localStorage.getItem("isLoaderLoaded") === "true") {
         return null;
     }

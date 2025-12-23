@@ -5,7 +5,9 @@ import { useTheme } from "next-themes";
 import { Link as LinkIcon, Github, Globe } from "lucide-react";
 import Link from "next/link";
 
-const CustomLink = ({ href, children, className }) => <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
+const CustomLink = ({ href, children, className }) => {
+  <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}</a>
+};
 
 export default function ProjectCard({ data, index }) {
   const { theme } = useTheme();   // ⭐ detect theme change

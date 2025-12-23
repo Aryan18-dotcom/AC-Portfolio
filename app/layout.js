@@ -31,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning >
       <body className={`${sora.variable} ${fira.variable} ${outfit.variable} ${jetbrains.variable} antialiased h-full w-full relative`}>
         <Providers>{children}</Providers>
       </body>
