@@ -8,20 +8,27 @@ const Loader = () => {
 
     useEffect(() => {
         setIsClient(true);
-        const hasLoaded = localStorage.getItem("isLoaderLoaded") === "true";
-        document.documentElement.style.overflow = "hidden";
+        // 1. Switched to sessionStorage - wips when tab closes
+        const hasLoaded = sessionStorage.getItem("isLoaderLoaded") === "true";
 
         if (hasLoaded) {
             setDone(true);
             document.documentElement.style.overflow = "auto";
         } else {
+            // Lock scroll if it's the first time
             document.documentElement.style.overflow = "hidden";
         }
+
+        // Cleanup function to ensure scroll is restored if component unmounts
+        return () => {
+            document.documentElement.style.overflow = "auto";
+        };
     }, []);
 
     const handleComplete = useCallback(() => {
         setTimeout(() => {
-            localStorage.setItem("isLoaderLoaded", "true");
+            // 2. Save to sessionStorage instead of localStorage
+            sessionStorage.setItem("isLoaderLoaded", "true");
             setDone(true);
             document.documentElement.style.overflow = "auto";
         }, 2000);
@@ -29,7 +36,8 @@ const Loader = () => {
 
     if (!isClient) return null;
 
-    if (done && typeof window !== "undefined" && localStorage.getItem("isLoaderLoaded") === "true") {
+    // 3. Logic check uses sessionStorage
+    if (done && typeof window !== "undefined" && sessionStorage.getItem("isLoaderLoaded") === "true") {
         return null;
     }
 
